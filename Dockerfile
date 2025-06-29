@@ -22,6 +22,8 @@ WORKDIR /workspace
 
 # Clone chatterboxPro repo
 RUN git clone https://github.com/Jeremy-Harper/chatterboxPro.git .
+# Install correct GPU-compatible torch from official PyTorch index
+RUN pip install torch==2.7.0 --index-url https://download.pytorch.org/whl/cu121
 
 # Install Python dependencies
 RUN pip install --upgrade pip
